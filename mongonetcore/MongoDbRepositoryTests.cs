@@ -15,7 +15,7 @@ namespace mongonetcore
     /// </notes>
     public class MongoDbRepositoryTests
     {
-        UsersRepository _mongoDbRepo = new UsersRepository("mongodb://localhost:27017");
+        UsersRepository _mongoDbRepo = new UsersRepository("mongodb://127.0.0.1:27017");
 
         private async Task Initialize()
         {
@@ -60,7 +60,7 @@ namespace mongonetcore
         [Fact]
         public void CheckConnection_DbNotAvailable_ConnectionFailed()
         {
-            var mongoDbRepo = new UsersRepository("mongodb://localhost:27016");
+            var mongoDbRepo = new UsersRepository("mongodb:127.0.0.1:27016");
             var connected = mongoDbRepo.CheckConnection();
             Assert.False(connected);
         }
