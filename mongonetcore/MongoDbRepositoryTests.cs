@@ -60,7 +60,7 @@ namespace mongonetcore
         [Fact]
         public void CheckConnection_DbNotAvailable_ConnectionFailed()
         {
-            var mongoDbRepo = new UsersRepository("mongodb:127.0.0.1:27016");
+            var mongoDbRepo = new UsersRepository("mongodb://127.0.0.1:27016");
             var connected = mongoDbRepo.CheckConnection();
             Assert.False(connected);
         }
